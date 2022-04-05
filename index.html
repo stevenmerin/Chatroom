@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Font family -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&family=Roboto:wght@300;400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Chatroom</title>
+</head>
+<body>
+
+  <div class="container containerLogin">
+    <h1 class="text-center">Welcome to the Mini Chatroom</h1>
+
+    <!-- update name form -->
+    <form class="new-name">
+      <div class="input-group">
+        <input type="text" id="name" class="form-control" required placeholder="Join using your name">
+        <div class="input-group-append">
+          <input type="submit" class="btn" value="Join">
+        </div>
+      </div>
+    </form>
+
+    <div class="my-3">
+      <h4 class="or text-center">Or</h4>
+      <h3 class="text-center">Join Anonymously</h3>
+    </div>
+
+    <div class="text-center my-3">
+      <button class="btn" id="joinButton">Join</button>
+    </div>
+
+  </div>
+  
+  <!-- container & title -->
+  <div class="container containerChat my-4 d-none">
+    <h1 class="my-2 text-center">Mini Chatroom</h1>
+  
+   
+    <!-- buttons for chatrooms -->
+    <div class="chat-rooms mb-3 text-center">
+      <div class="my-2">Choose a chatroom:</div>
+      <button class="btn btn-lg" id="general">#general</button>
+      <button class="btn" id="gaming">#gaming</button>
+      <button class="btn" id="music">#music</button>
+      <button class="btn" id="coding">#coding</button>
+      <button class="btn d-none" id="coding">#decoy</button>
+    </div>
+
+    <!-- chat list / window -->
+    <div class="chat-window">
+      <ul class="chat-list list-group style-1" id="scrollMsg">
+      </ul>
+    </div>
+
+    <!-- new chat form -->
+    <form class="new-chat my-3">
+      <div class="input-group">
+        <input type="text" id="message" class="form-control" required>
+        <div class="input-group-append">
+          <input type="submit" class="btn" value="send">
+        </div>
+      </div>
+    </form>
+
+    <div class="text-center my-3">
+      <button class="btn" id="leaveBtn">Leave chat</button>
+    </div>
+
+    <!-- update name from -->
+    <!-- <form class="new-name my-3">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Update name:</div>
+        </div>
+        <input type="text" id="name" class="form-control" required placeholder="Set or update your name">
+        <div class="input-group-append">
+          <input type="submit" class="btn" value="update">
+        </div>
+      </div>
+      <div class="update-msg"></div>
+    </form> -->
+
+  
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.30.1/date_fns.min.js" integrity="sha512-F+u8eWHrfY8Xw9BLzZ8rG/0wIvs0y+JyRJrXjp3VjtFPylAEEGwKbua5Ip/oiVhaTDaDs4eU2Xtsxjs/9ag2bQ=="crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script> -->
+  <!-- Firebase & firestorm connection configuration v.8 -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script>
+    // replace "xxxx" with your own generated firebase config
+    const firebaseConfig = {
+      apiKey: 'AIzaSyDE5tU_VVBjyWQ9Zhh6ojNlHCfuPXRUcis',
+      authDomain: "chatroom-ee0e1.firebaseapp.com",
+      projectId: "chatroom-ee0e1",
+      storageBucket: "chatroom-ee0e1.appspot.com",
+      messagingSenderId: "336067856877",
+      appId: "1:336067856877:web:1b0efa230a6182c2537fe4",
+      measurementId: "G-J0GHJFC132"
+    };
+    firebase.initializeApp(firebaseConfig); // starting the connection with our backend
+    const db = firebase.firestore();
+  </script>
+
+  <script src="scripts/chat.js"></script>
+  <script src="scripts/ui.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+body {
+  font-family: Quicksand, sans-serif;
+  background: url('images/purplebg3.png');
+}
+h1, h3, .chat-rooms div {
+  color: #fff;
+}
+.container {
+  max-width: 600px;
+}
+.containerLogin {
+  max-width: 700px;
+  margin-top: 15%;
+}
+.new-name {
+  margin-top: 10%;
+}
+.or {
+  color: #999;
+}
+.btn {
+  background: #9d4edd;
+  color: white;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.btn:focus {
+  outline: none !important;
+}
+.username {
+  font-weight: bold;
+}
+.time {
+  font-size: 0.8em;
+  color: #999;
+}
+.update-msg {
+  text-align: center;
+  margin: 15px auto;
+  color: #fff;
+}
+#scrollMsg {
+  height: 355px;
+  overflow-y: auto;
+}
+.username, .message {
+  word-wrap: break-word;
+}
+
+.chat-window {
+  border-radius: 45%;
+}
+
+.style-1::-webkit-scrollbar-track {
+	/* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+.style-1::-webkit-scrollbar {
+	width: 9px;
+	background-color: #F5F5F5;
+}
+
+.style-1::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	/* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
+	background-color: #5a189a;
+}
+
+
+/* Large screens  */
+@media only screen  and (min-width : 1824px) {
+  #scrollMsg {
+    height: 670px;
+    overflow-y: auto;
+  }
+}
+
+/* Mobile screens */
+
+@media screen and (max-width: 600px) { 
+  #scrollMsg {
+    height: 380px;
+  }
+  .chat-rooms .btn {
+    font-size: 90%;
+    margin: 1% 1%;
+  }
+  .containerChat h1 {
+    font-size: 1.5rem;
+  }
+}
